@@ -1,146 +1,97 @@
-.header-menu{
-    list-style:none;
-    margin-top:7px;
-}
-.header-menu li{
-    display:inline-block;
-}
-.header-menu li a{
-    color:#fff;
-    background-color:rgba(0,0,0,0.1);
-    padding:10px 20px;
-    display:inline-block;
-}
-.header-menu li a:hover{
-    background-color:rgba(0,0,0,0.2);
-}
-.no-shadow{
-    box-shadow:none;
-}
-.main{
-    background-image: none;
-    display:inline-block;
-}
-.main:after,.main:before{
-    clear:both;
-}
-.left-sidebar ul{
-    list-style:none;
-}
-.left-sidebar ul li{
-    display:block;
-    margin-bottom:5px;
-}
-.left-sidebar ul li a{
-    padding:10px 20px;
-    font-weight:bold;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batzorigiin profile - Facebook Clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">[ thefacebook ]</div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#">home</a></li>
+                <li><a href="#">search</a></li>
+                <li><a href="#">global</a></li>
+                <li><a href="#">social net</a></li>
+                <li><a href="#">invite</a></li>
+                <li><a href="#">faq</a></li>
+                <li><a href="#">logout</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="quick-search">
+                <input type="text" placeholder="Quick Search">
+                <button>go</button>
+            </div>
+            <ul class="menu">
+                <li><a href="#">My Profile [edit]</a></li>
+                <li><a href="#">My Friends</a></li>
+                <li><a href="#">My Groups</a></li>
+                <li><a href="#">My Replies</a></li>
+                <li><a href="#">My Messages</a></li>
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">My Privacy</a></li>
+            </ul>
+            <div class="ad">
+                <img src="ad-placeholder.jpg" alt="Ad">
+            </div>
+        </aside>
 
-/*Post*/
-.post{
-    display:block;
-    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.1);
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 2px;
-    margin-bottom:10px;
-}
-.profile-picture{
-    background-image:url(../assets/imgs/wall.jpg);
-    width:50px;
-    height:50px;
-}
-.post-heading{
-    border-bottom:1px solid rgba(0,0,0,0.1);
-}
-.post-heading,.post-body{
-    padding:10px 5px;
-}
-.post-body div{
-    white-space: pre-wrap;
-}
-.post-user-name{
-    font-weight:bold;
-    font-family:cursive;
-    font-size:15px;
-}
-.post-action{
-    border-top:1px solid rgba(0,0,0,0.1);
-}
-.post-action-menu{
-    list-style: none;
-    padding:0px;
-}
-.post-action-menu li,
-.post-action-menu li a{
-    display:inline-block;
-}
-.post-action-menu li a {
-    padding: 10px;
-    font-size: 12px;
-    font-weight: bold;
-}
-.post-action-menu li:not(.pull-right) a:hover{
-    color:#2d9a40;
-}
-/*Chat sidebar*/
-.chat-user {
-    position:relative;
-    padding: 5px 10px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    background: rgba(255,0,0,0.06);
-}
-.chat-user a{
-    line-height:28px;
-    cursor: default;
-    color: rgb(255,0,0);
-}
-.chat-user:after {
-    content: "";
-    width: 3px;
-    height: 3px;
-    position: absolute;
-    right: 5px;
-    top: 40%;
-    padding: 4px;
-    background-color:rgb(255,0,0);
-    border-radius: 50%;
-}
-.chat-user.online a{
-    color: #2d9a40;
-    cursor:pointer;
-}
-.chat-user.online{
-    background: rgba(45, 154, 64, 0.06);
-}
-.chat-user.online:hover{
-    cursor:pointer;
-    background: rgba(45, 154, 64, 0.2);
-}
-.chat-user.online:after{
-        background: #2d9a40;
-}
-.chat-user img{
-    width:30px;
-    height:30px;
-}
-.table{
-    width:100%;
-    border:0px;
-}
-.table tr td{
-padding: 10px 20px;
-margin:0px;
-}
-.table-striped tr{
-    background:rgba(0,0,0,0.05);
-}
-.table-striped tr:hover{
-    background:rgba(0,0,0,0.1);
-}
-.table-striped tr:nth-child(2n+1){
-    background:rgba(0,0,0,0.1);
-}
-.table-striped tr:nth-child(2n+1):hover{
-    background:rgba(0,0,0,0.2);
-}
+        <!-- Profile Section -->
+        <section class="profile">
+            <h1 class="section-title">Batzorigiin Profile</h1>
+            
+            <div class="profile-content">
+                <div class="picture">
+                    <img src="profile-pic.jpg" alt="Batzorigiin">
+                    <button>Send Brian a Message</button>
+                    <button>Poke Him!</button>
+                </div>
+
+                <div class="profile-info">
+                    <div class="box">
+                        <p><strong>Connection:</strong> You are in a relationship with Bold.</p>
+                    </div>
+                    <div class="box">
+                        <p><strong>Mutual Friends:</strong> You have <a href="#">19 friends</a> in common.</p>
+                    </div>
+                    <div class="box">
+                        <p><strong>Access:</strong> Brian is currently logged in from a non-residential location.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Friends Section -->
+            <h2 class="section-title">Friends at Puget Sound</h2>
+            <div class="friends-grid">
+                <div class="friend"><img src="friend1.jpg"><p>Bymbaa B</p></div>
+                <div class="friend"><img src="friend2.jpg"><p>Namuuna Namuk</p></div>
+                <div class="friend"><img src="friend3.jpg"><p>Zorigt Janchiv</p></div>
+                <div class="friend"><img src="friend4.jpg"><p>Hulan Uka</p></div>
+                <div class="friend"><img src="friend5.jpg"><p>temka</p></div>
+                <div class="friend"><img src="friend6.jpg"><p>Haliun haliuka</p></div>
+            </div>
+
+            <!-- Information Section -->
+            <h2 class="section-title">Information</h2>
+            <div class="info">
+                <p><strong>Name:</strong> Batzorigiin/p>
+                <p><strong>Member Since:</strong> May 21, 2005</p>
+                <p><strong>Last Update:</strong> July 19, 2005</p>
+                <p><strong>School:</strong> Puget Sound '09</p>
+                <p><strong>Status:</strong> Student</p>
+                <p><strong>Sex:</strong> Male</p>
+                <p><strong>Residence:</strong> Bold 311</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
