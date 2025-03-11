@@ -5,220 +5,322 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Colorful CV</title>
   <style>/* Reset and Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Open Sans', Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f5f5f5;
-      padding: 20px;
-    }
-    
-    .cv-container {
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: white;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      padding: 40px;
-      border-top: 5px solid #e63946; /* Red accent at top */
-    }
-    
-    /* Header Section */
-    .header {
-      margin-bottom: 30px;
-      border-bottom: 3px solid #1d3557; /* Dark blue border */
-      padding-bottom: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-    
-    .name-title {
-      flex: 1;
-    }
-    
-    h1 {
-      font-size: 32px;
-      margin-bottom: 5px;
-      color: #e63946; /* Red color for name */
-    }
-    
-    h2 {
-      font-size: 20px;
-      font-weight: 400;
-      color: #1d3557; /* Dark blue for title */
-      margin-bottom: 10px;
-    }
-    
-    .contact-info {
-      text-align: right;
-      flex: 1;
-      background-color: #f1faee; /* Light background for contact info */
-      padding: 15px;
-      border-radius: 5px;
-      border-left: 3px solid #e63946; /* Red accent */
-    }
-    
-    .contact-info p {
-      margin-bottom: 5px;
-      font-size: 14px;
-    }
-    
-    /* Section Styles */
-    .section {
-      margin-bottom: 30px;
-    }
-    
-    .section-title {
-      font-size: 22px;
-      margin-bottom: 15px;
-      color: #1d3557; /* Dark blue */
-      background-color: #f1faee;
-      padding: 8px 15px;
-      border-left: 5px solid #e63946; /* Red accent */
-    }
-    
-    /* List Box Styles */
-    .list-box {
-      border: 1px solid #ddd;
-      background-color: #f8f9fa;
-      border-radius: 5px;
-      padding: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-    
-    .list-box ul, .list-box ol {
-      margin-left: 20px;
-      margin-bottom: 10px;
-    }
-    
-    .list-box li {
-      margin-bottom: 8px;
-      position: relative;
-    }
-    
-    .list-box ul li::before {
-      content: "•";
-      color: #e63946; /* Red bullet points */
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-    
-    /* Experience & Education Items */
-    .item {
-      margin-bottom: 25px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 20px;
-    }
-    
-    .item:last-child {
-      border-bottom: none;
-    }
-    
-    .item-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-    
-    .item-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: #1d3557; /* Dark blue */
-    }
-    
-    .item-subtitle {
-      font-size: 16px;
-      color: #e63946; /* Red */
-      margin-bottom: 8px;
-    }
-    
-    .date {
-      color: #457b9d; /* Blue-gray for dates */
-      font-size: 14px;
-      font-weight: 600;
-      background-color: #f1faee;
-      padding: 3px 8px;
-      border-radius: 3px;
-    }
-    
-    .item-description {
-      font-size: 15px;
-    }
-    
-    /* Skills Section */
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    
-    .skill {
-      background-color: #f1faee;
-      padding: 8px 12px;
-      border-radius: 4px;
-      font-size: 14px;
-      border-left: 3px solid #e63946; /* Red accent */
-      color: #1d3557; /* Dark blue text */
-    }
-    
-    .skill-category {
-      margin-bottom: 20px;
-    }
-    
-    .skill-category h4 {
-      margin-bottom: 10px;
-      color: #1d3557; /* Dark blue */
-      font-size: 16px;
-      border-bottom: 2px solid #a8dadc; /* Light blue border */
-      padding-bottom: 5px;
-    }
-    
-    /* Print Styles */
-    @media print {
-      body {
-        background-color: white;
-        padding: 0;
-      }
-      
-      .cv-container {
-        box-shadow: none;
-        padding: 20px;
-      }
-    }
-    
-    /* Responsive Styles */
-    @media (max-width: 600px) {
-      .cv-container {
-        padding: 20px;
-      }
-      
-      .header {
-        flex-direction: column;
-      }
-      
-      .contact-info {
-        text-align: left;
-        margin-top: 15px;
-        width: 100%;
-      }
-      
-      .item-header {
-        flex-direction: column;
-      }
-      
-      .date {
-        margin-top: 5px;
-      }
+   /* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.cv-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 0; /* Remove padding to allow full-bleed background */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Mongolian Flag Background */
+.cv-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 33.33%; /* Left red band */
+  height: 100%;
+  background-color: #c4272f; /* Mongolian flag red */
+  z-index: 0;
+}
+
+.cv-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 33.33%; /* Right red band */
+  height: 100%;
+  background-color: #c4272f; /* Mongolian flag red */
+  z-index: 0;
+}
+
+.cv-content {
+  position: relative;
+  z-index: 1;
+  background-color: #015197; /* Mongolian flag blue for middle section */
+  margin: 0 33.33%;
+  min-height: 100%;
+  padding: 40px;
+  color: white;
+}
+
+/* Soyombo-inspired element */
+.soyombo-element {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 60px;
+  height: 100px;
+  background-color: #ffd700; /* Gold/Yellow */
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  z-index: 2;
+}
+
+/* Content wrappers for the red sections */
+.red-section-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 33.33%;
+  height: 100%;
+  padding: 40px 20px;
+  z-index: 1;
+}
+
+.red-section-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 33.33%;
+  height: 100%;
+  padding: 40px 20px;
+  z-index: 1;
+}
+
+/* Header Section */
+.header {
+  margin-bottom: 30px;
+  border-bottom: 3px solid #ffd700; /* Gold/Yellow border */
+  padding-bottom: 20px;
+}
+
+.name-title {
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+  color: #ffd700; /* Gold/Yellow for name */
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 3px solid #ffd700; /* Gold/Yellow accent */
+}
+
+.contact-info p {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* Section Styles */
+.section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #ffd700; /* Gold/Yellow */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+}
+
+/* List Box Styles */
+.list-box {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.list-box ul, .list-box ol {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.list-box li {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.list-box ul li::before {
+  content: "•";
+  color: #ffd700; /* Gold/Yellow bullet points */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Red section styles */
+.red-section-left .section-title,
+.red-section-right .section-title {
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.red-section-left .list-box,
+.red-section-right .list-box {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Experience & Education Items */
+.item {
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 20px;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.item-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.item-subtitle {
+  font-size: 16px;
+  color: #ffd700; /* Gold/Yellow */
+  margin-bottom: 8px;
+}
+
+.date {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.item-description {
+  font-size: 15px;
+}
+
+/* Skills Section */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.skill {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  border-left: 3px solid #ffd700; /* Gold/Yellow accent */
+}
+
+.skill-category {
+  margin-bottom: 20px;
+}
+
+.skill-category h4 {
+  margin-bottom: 10px;
+  color: #ffd700; /* Gold/Yellow */
+  font-size: 16px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background-color: white;
+    padding: 0;
+  }
+  
+  .cv-container {
+    box-shadow: none;
+  }
+  
+  .cv-container::before,
+  .cv-container::after,
+  .cv-content {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 800px) {
+  .cv-container::before,
+  .cv-container::after {
+    display: none;
+  }
+  
+  .cv-content {
+    margin: 0;
+    width: 100%;
+  }
+  
+  .red-section-left,
+  .red-section-right {
+    position: static;
+    width: 100%;
+    padding: 30px;
+    background-color: #c4272f;
+  }
+  
+  .soyombo-element {
+    position: relative;
+    margin: 0 auto 20px;
+    left: auto;
+    top: auto;
+  }
+  
+  .header {
+    flex-direction: column;
+  }
+  
+  .contact-info {
+    margin-top: 15px;
+    width: 100%;
+  }
+  
+  .item-header {
+    flex-direction: column;
+  }
+  
+  .date {
+    margin-top: 5px;
+  }
+
     }</style>
   <link rel="stylesheet" href="your-css-file.css">
 </head>
