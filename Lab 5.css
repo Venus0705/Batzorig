@@ -1,138 +1,146 @@
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0; /* саарал Background */
+/* General Styles */
+$font: 'Lato', sans-serif;
+$blueDarker:#13124F;
+$white:#eeeeee;
+$pink:#F61067;
+$blueLighter:#352B5A;
+$grey:#9090A5;
+$green:#2ad392;
+$LightBlue:#3fa9f5;
+
+
+.jumbotron {
+    background: $blueDarker;
+    color:$white;
+    border-radius:0px;
+    border:0px;
+    font-family:$font;
+
+    };
+
+
+.btn-primary{
+  background: $pink;
+  border-radius:0px;
+  font-family:$font;
+};
+
+.btn-primary:hover{
+ background: $green; 
+}
+  
+.navbar-default {
+  background: $blueLighter;
+  margin-bottom:-5px;
+  border-radius:0px;
+  border:0px;
+  }; 
+
+.panel{
+   border-radius:0px;
+    border:0px;
 }
 
-.container {
-    width: 80%;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.msg{
+  background:$pink;
+  color:$white;
+  text-align: center;
+    transition-property: background;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    transition-delay: .5s;
+    
 }
 
-.header {
-    background-color: #673AB7; /* үзмэн ягаан background */
-    color: white;
-    padding: 20px;
-    text-align: left;
+.msg:hover{
+background: $LightBlue;
 }
 
-.header h1 {
-    margin: 0;
-    font-size: 2em;
+.badge{
+  background:$blueDarker;
 }
 
-.header p {
-    margin: 10px 0;
+
+.box1{
+  background:$blueDarker;
+  coLor:$white;
+  text-align: center;
 }
 
-.learn-more-btn {
-    background-color: #E91E63; /* Pink button */
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
+.panel-heading{
+  background:$grey;
+  border-radius:0px;
+  border:0px; 
 }
 
-.content {
-    display: flex;
-    margin-top: 20px;
+.btn-side{
+  width:245px;
+  height:40px;
 }
 
-.main-content {
-    flex: 2;
-    padding-right: 20px;
+.list-group-item{
+ background: $blueDarker;
+ border:0px;
 }
 
-.sidebar {
-    flex: 1;
-    background-color: #f9f9f9;
-    padding: 20px;
+.panel-footer{
+    background: $blueLighter;
 }
 
-.main-content h2 {
-    margin-top: 0;
+.logo{
+  width:140px;
+  margin-top:-12px;
 }
 
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    overflow: hidden;
-    margin-top: 20px;
+.form-control{
+  background: $blueLighter;
+  border-radius:0px;
+  border-left:0px;
+  border-right:0px;
 }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.yas{
+  
+};
+
+.nope{
+  background:$white;
+  margin-left:10px;
+  width:100px;
+  
+  color:$green;
+  border-color:$green;
 }
 
-.sidebar-header {
-    background-color: #9C27B0; /* ягаан өнгө */
-    color: white;
-    padding: 10px;
-    text-align: center;
+.btn-vote{
+   width:170px;
+  height:40px;
 }
 
-.sidebar-content {
-    margin-top: 20px;
+.progress{
+   border-radius:0px;
 }
 
-.input-group {
-    margin-bottom: 10px;
+.progress-bar-success{
+ background:$pink;
 }
 
-input[type="text"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.progress-bar-danger{
+ background:$green;
 }
 
-.send-btn {
-    background-color: #4CAF50; /* ногоон товч */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.alert-info{
+  background:$grey;
+  border-radius:0px;
+  border:0px;
+  color:$white;
+  margin-top:10px;
 }
 
-.vote-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.vote-buttons button {
-    background-color: #2196F3; /* цэнхэр товч*/
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    flex: 1;
-    margin: 0 5px;
-}
-
-.alert-box {
-    background-color: #FFEB3B; /* шар тэмдэг */
-    padding: 10px;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #e0e0e0; /* Саарал footer */
+footer{
+  background:$blueDarker;
+  margin:0;
+  padding:5px;
+  color:$white;
+  
 }
