@@ -1,4 +1,4 @@
-// Put variables here
+
 $font: 'Lato', sans-serif;
 $blueDarker:#13124F;
 $white:#eeeeee;
@@ -45,11 +45,6 @@ $LightBlue:#3fa9f5;
   background:$pink;
   color:$white;
   text-align: center;
-    transition-property: background;
-    transition-duration: 1s;
-    transition-timing-function: ease-in;
-    transition-delay: .5s;
-    
 }
 
 .msg:hover{
