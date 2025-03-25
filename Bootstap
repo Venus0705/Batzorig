@@ -1,6 +1,6 @@
 // Put variables here
 font: 'Lato', sans-serif;
-blueDarker:#13124F;
+#13124F;
 $white:#eeeeee;
 $pink:#F61067;
 $blueLighter:#352B5A;
