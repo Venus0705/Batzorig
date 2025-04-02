@@ -122,13 +122,12 @@ body {
 .progress {
   border-radius: 0;
 }
-
 .progress-bar-success {
-  background-color: #f61067; /* $pink */
+  background-color: #f61067 !important; /* $pink */
 }
 
 .progress-bar-danger {
-  background-color: #2ad392; /* $green */
+  background-color: #2ad392 !important; /* $green */
 }
 
 .alert-info {
