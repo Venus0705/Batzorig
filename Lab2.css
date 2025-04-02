@@ -1,202 +1,147 @@
+/* Bootstrap overrides based on provided color variables */
+
 body {
-  font-family: sans-serif; /* Or any preferred font */
-  background-color: #f0f0f0; /* Light gray background */
-  color: #333; /* Dark gray text */
-}
-
-.a {
-  color: #007bff; /* Bootstrap primary color for links */
-  text-decoration: none;
-}
-
-.a:hover {
-  text-decoration: underline;
-}
-
-.container-fluid {
-  padding: 0; /* Remove default padding from container */
-}
-
-.navbar {
-  background-color: #fff; /* White navbar background */
-  border: none; /* Remove default border */
-  margin-bottom: 20px; /* Add some space below the navbar */
-}
-
-.navbar-brand img.logo {
-  max-height: 50px; /* Adjust logo height as needed */
+  font-family: "Lato", sans-serif; /* $font */
+  color: #eeeeee; /* $white */
 }
 
 .jumbotron {
-  background-color: #286090; /* Dark blue background */
-  color: #fff; /* White text */
-  padding: 40px;
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.jumbotron h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.jumbotron p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  background: #13124f; /* $blueDarker */
+  color: #eeeeee; /* $white */
+  border-radius: 0;
+  border: 0;
+  font-family: "Lato", sans-serif; /* $font */
 }
 
 .btn-primary {
-  background-color: #007bff; /* Bootstrap primary color */
-  border-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 4px;
+  background-color: #f61067; /* $pink */
+  border-radius: 0;
+  font-family: "Lato", sans-serif; /* $font */
+  border: 1px solid #f61067; /* Added for consistency */
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  background-color: #2ad392; /* $green */
+  border-color: #2ad392; /* Added for consistency */
 }
 
-.page-header {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-.embed-responsive {
-  position: relative;
-  display: block;
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.embed-responsive-4by3 {
-  padding-bottom: 75%; /* 4:3 aspect ratio (3 / 4 = 0.75) */
-}
-
-.embed-responsive iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.navbar-default {
+  background-color: #352b5a; /* $blueLighter */
+  margin-bottom: -5px;
+  border-radius: 0;
   border: 0;
 }
 
-.alert-info {
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-  color: #31708f;
-  padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 4px;
+.navbar-default .navbar-nav > li > a {
+    color: #eeeeee; /* $white. added to ensure text color */
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #3fa9f5; /* $LightBlue, or a suitable hover color */
+    background-color: transparent; /*Ensuring no background on hover*/
 }
 
 .panel {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 20px;
-}
-
-.panel-default > .panel-heading {
-  background-color: #f5f5f5;
-  border-color: #ddd;
-  padding: 10px 15px;
-}
-
-.panel-body {
-  padding: 15px;
-}
-
-.list-group {
-  padding-left: 0;
-  margin-bottom: 20px;
-}
-
-.list-group-item {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-  margin-bottom: -1px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-}
-
-.form-control {
-  display: block;
-  width: 100%;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.well {
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.progress {
-  height: 20px;
-  margin-bottom: 20px;
-  overflow: hidden;
-  background-color: #f5f5f5;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
-}
-
-.progress-bar {
-  float: left;
-  width: 0;
-  height: 100%;
-  font-size: 12px;
-  line-height: 20px;
-  color: #fff;
-  text-align: center;
-  background-color: #337ab7;
-  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
-  -webkit-transition: width .6s ease;
-  -o-transition: width .6s ease;
-  transition: width .6s ease;
-}
-
-.progress-bar-success {
-  background-color: #5cb85c;
-}
-
-.progress-bar-danger {
-  background-color: #d9534f;
-}
-
-footer {
-  text-align: center;
-  padding: 20px 0;
-  background-color: #f5f5f5;
-  border-top: 1px solid #ddd;
-}
-
-.btn-vote {
-  margin-top: 10px;
+  border-radius: 0;
+  border: 0;
 }
 
 .msg {
+  background-color: #f61067; /* $pink */
+  color: #eeeeee; /* $white */
   text-align: center;
 }
 
-.msg .badge {
-  background-color: #007bff;
-  color: white;
+.msg:hover {
+  background-color: #3fa9f5; /* $LightBlue */
+}
+
+.badge {
+  background-color: #13124f; /* $blueDarker */
+}
+
+.box1 {
+  background-color: #13124f; /* $blueDarker */
+  color: #eeeeee; /* $white */
+  text-align: center;
+}
+
+.panel-heading {
+  background-color: #9090a5; /* $grey */
+  border-radius: 0;
+  border: 0;
+}
+
+.btn-side {
+  width: 245px;
+  height: 40px;
+}
+
+.list-group-item {
+  background-color: #13124f; /* $blueDarker */
+  border: 0;
+  color: #eeeeee; /*$white, added to ensure text color*/
+}
+
+.panel-footer {
+  background-color: #352b5a; /* $blueLighter */
+  color: #eeeeee; /*$white, added to ensure text color*/
+}
+
+.logo {
+  width: 140px;
+  margin-top: -12px;
+}
+
+.form-control {
+  background-color: #352b5a; /* $blueLighter */
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  color: #eeeeee; /*$white, added to ensure text color*/
+}
+
+.nope {
+  background-color: #eeeeee; /* $white */
+  margin-left: 10px;
+  width: 100px;
+  color: #2ad392; /* $green */
+  border-color: #2ad392; /* $green */
+}
+
+.btn-vote {
+  width: 170px;
+  height: 40px;
+}
+
+.progress {
+  border-radius: 0;
+}
+
+.progress-bar-success {
+  background-color: #f61067; /* $pink */
+}
+
+.progress-bar-danger {
+  background-color: #2ad392; /* $green */
+}
+
+.alert-info {
+  background-color: #9090a5; /* $grey */
+  border-radius: 0;
+  border: 0;
+  color: #eeeeee; /* $white */
+  margin-top: 10px;
+}
+
+footer {
+  background-color: #13124f; /* $blueDarker */
+  margin: 0;
+  padding: 5px;
+  color: #eeeeee; /* $white */
 }
