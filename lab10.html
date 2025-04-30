@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #808080;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .converter {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+    input {
+      font-size: 1.5em;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-align: right;
+      pointer-events: none;
+      background: #eaeaea;
+      border: none;
+    }
+    .dropdowns {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    select {
+      width: 48%;
+      padding: 5px;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+    }
+    .buttons button {
+      font-size: 1.2em;
+      padding: 10px;
+      background: #ff0000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .buttons button:hover {
+      background: #0056b3;
+    }
+    #convertBtn {
+      width: 100%;
+      margin-top: 10px;
+      background: #28a745;
+    }
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="converter">
+    <input type="text" id="amountInput" readonly placeholder="0" />
+    
+    <div class="dropdowns">
+      <select id="fromCurrency"></select>
+      <select id="toCurrency"></select>
+    </div>
+
+    <div class="buttons">
+      <button onclick="appendNumber('1')">1</button>
+      <button onclick="appendNumber('2')">2</button>
+      <button onclick="appendNumber('3')">3</button>
+      <button onclick="appendNumber('4')">4</button>
+      <button onclick="appendNumber('5')">5</button>
+      <button onclick="appendNumber('6')">6</button>
+      <button onclick="appendNumber('7')">7</button>
+      <button onclick="appendNumber('8')">8</button>
+      <button onclick="appendNumber('9')">9</button>
+      <button onclick="clearInput()">C</button>
+      <button onclick="appendNumber('0')">0</button>
+      <button onclick="appendNumber('.')">.</button>
+    </div>
+
+    <button id="convertBtn" onclick="convert()">Convert</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const exchangeArray = [
+      { name: 'USD', value: 1 },
+      { name: 'EUR', value: 0.88 },
+      { name: 'POUND', value: 0.75 },
+      { name: 'WON', value: 1433 },
+      { name: 'YEN', value: 142 },
+      { name: 'YAN', value: 7.31 },
+      { name: 'MNT', value: 3537 }
+    ];
+
+    const fromCurrency = document.getElementById('fromCurrency');
+    const toCurrency = document.getElementById('toCurrency');
+    const amountInput = document.getElementById('amountInput');
+    const result = document.getElementById('result');
+
+    let rawInput = '';
+
+    exchangeArray.forEach(currency => {
+      const optionFrom = document.createElement('option');
+      optionFrom.value = currency.value;
+      optionFrom.textContent = currency.name;
+      fromCurrency.appendChild(optionFrom);
+
+      const optionTo = document.createElement('option');
+      optionTo.value = currency.value;
+      optionTo.textContent = currency.name;
+      toCurrency.appendChild(optionTo);
+    });
+
+    fromCurrency.value = 1; // USD
+    toCurrency.value = 3537; // MNT
+
+    function appendNumber(num) {
+      if (num === '.' && rawInput.includes('.')) return;
+      rawInput += num;
+      amountInput.value = formatWithCommas(rawInput);
+    }
+
+    function clearInput() {
+      rawInput = '';
+      amountInput.value = '';
+      result.textContent = '';
+    }
+
+    function convert() {
+      const amount = parseFloat(rawInput);
+      if (isNaN(amount)) {
+        result.textContent = "Please enter a valid number.";
+        return;
+      }
+
+      const fromRate = parseFloat(fromCurrency.value);
+      const toRate = parseFloat(toCurrency.value);
+      const converted = (amount / fromRate) * toRate;
+
+      result.textContent = `Converted: ${converted.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+
+    function formatWithCommas(value) {
+      const parts = value.split('.');
+      const integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      return parts.length > 1 ? `${integerPart}.${parts[1]}` : integerPart;
+    }
+  </script>
+</body>
+</html>
