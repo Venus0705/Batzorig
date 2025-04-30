@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #808080
+      background: #808080;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -98,7 +99,6 @@
   </div>
 
   <script>
-    // Exchange rate JSON
     const exchangeArray = [
       { name: 'USD', value: 1 },
       { name: 'EUR', value: 0.88 },
@@ -114,7 +114,8 @@
     const amountInput = document.getElementById('amountInput');
     const result = document.getElementById('result');
 
-    // Populate dropdowns
+    let rawInput = '';
+
     exchangeArray.forEach(currency => {
       const optionFrom = document.createElement('option');
       optionFrom.value = currency.value;
@@ -127,21 +128,23 @@
       toCurrency.appendChild(optionTo);
     });
 
-    fromCurrency.value = 1; // default USD
-    toCurrency.value = 3537; // default MNT
+    fromCurrency.value = 1; // USD
+    toCurrency.value = 3537; // MNT
 
     function appendNumber(num) {
-      if (num === '.' && amountInput.value.includes('.')) return;
-      amountInput.value += num;
+      if (num === '.' && rawInput.includes('.')) return;
+      rawInput += num;
+      amountInput.value = formatWithCommas(rawInput);
     }
 
     function clearInput() {
+      rawInput = '';
       amountInput.value = '';
       result.textContent = '';
     }
 
     function convert() {
-      const amount = parseFloat(amountInput.value);
+      const amount = parseFloat(rawInput);
       if (isNaN(amount)) {
         result.textContent = "Please enter a valid number.";
         return;
@@ -149,9 +152,15 @@
 
       const fromRate = parseFloat(fromCurrency.value);
       const toRate = parseFloat(toCurrency.value);
-
       const converted = (amount / fromRate) * toRate;
-      result.textContent = `Converted: ${converted.toFixed(2)}`;
+
+      result.textContent = `Converted: ${converted.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+
+    function formatWithCommas(value) {
+      const parts = value.split('.');
+      const integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      return parts.length > 1 ? `${integerPart}.${parts[1]}` : integerPart;
     }
   </script>
 </body>
