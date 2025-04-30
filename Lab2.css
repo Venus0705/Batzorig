@@ -1,8 +1,42 @@
-/* bootstrap */
+/* bootstrap customizations */
 
 body {
   font-family: "Lato", sans-serif; /* $font */
   color: #eeeeee; /* $white */
+  height: 100%; /* Make body take full viewport height */
+  margin: 0; /* Remove default body margin */
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
+  display: flex;
+  flex-direction: column; /* Arrange body content vertically */
+}
+
+html {
+  height: 100%; /* Make html take full viewport height */
+}
+
+.container-fluid {
+  min-height: 100vh; /* Ensure it's at least the viewport height */
+  display: flex;
+  flex-direction: column; /* Arrange its children vertically */
+  padding-left: 0; /* Remove default container padding */
+  padding-right: 0; /* Remove default container padding */
+}
+
+.row {
+  flex-grow: 1; /* Allow the row to grow and take up remaining space */
+  display: flex; /* Enable flexbox for its children (columns) */
+  margin-left: 0; /* Remove default row margin */
+  margin-right: 0; /* Remove default row margin */
+}
+
+.col-xs-12.col-md-8 {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-xs-6.col-md-4 {
+  display: flex;
+  flex-direction: column;
 }
 
 .jumbotron {
@@ -11,13 +45,15 @@ body {
   border-radius: 0;
   border: 0;
   font-family: "Lato", sans-serif; /* $font */
+  width: 100%; /* Ensure full width */
+  margin-bottom: 0; /* Remove default bottom margin */
 }
 
 .btn-primary {
   background-color: #f61067; /* $pink */
   border-radius: 0;
   font-family: "Lato", sans-serif; /* $font */
-  border: 1px solid #f61067; /* Added for consistency */
+  border: 1px solid #f61067;
 }
 
 .btn-primary:hover,
@@ -26,29 +62,32 @@ body {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   background-color: #2ad392; /* $green */
-  border-color: #2ad392; /* Added for consistency */
+  border-color: #2ad392;
 }
 
 .navbar-default {
   background-color: #352b5a; /* $blueLighter */
-  margin-bottom: -5px;
+  margin-bottom: 0; /* Ensure no gap below navbar */
   border-radius: 0;
   border: 0;
+  width: 100%; /* Ensure full width */
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #eeeeee; /* $white. added to ensure text color */
+  color: #eeeeee; /* $white */
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #3fa9f5; /* $LightBlue, or a suitable hover color */
-    background-color: transparent; /*Ensuring no background on hover*/
+  color: #3fa9f5; /* $LightBlue */
+  background-color: transparent;
 }
 
 .panel {
   border-radius: 0;
   border: 0;
+  flex-grow: 0; /* Prevent panels from expanding vertically by default */
+  margin-bottom: 0; /* Remove default panel margin */
 }
 
 .msg {
@@ -69,6 +108,8 @@ body {
   background-color: #13124f; /* $blueDarker */
   color: #eeeeee; /* $white */
   text-align: center;
+  display: flex;
+  flex-direction: column; /* Arrange content within box1 vertically */
 }
 
 .panel-heading {
@@ -78,19 +119,32 @@ body {
 }
 
 .btn-side {
-  width: 245px;
+  width: 100%; /* Make button take full width of its container */
   height: 40px;
+  margin-top: 10px; /* Add some spacing above the button */
+}
+
+.list-group {
+  display: flex;
+  flex-direction: column; /* Arrange list items vertically */
+  margin-bottom: 0; /* Remove default list group margin */
 }
 
 .list-group-item {
   background-color: #13124f; /* $blueDarker */
   border: 0;
-  color: #eeeeee; /*$white, added to ensure text color*/
+  color: #eeeeee; /* $white */
+  border-bottom: 1px solid #352b5a; /* Add a subtle separator */
+}
+
+.list-group-item:last-child {
+  border-bottom: none; /* Remove border from the last item */
 }
 
 .panel-footer {
   background-color: #352b5a; /* $blueLighter */
-  color: #eeeeee; /*$white, added to ensure text color*/
+  color: #eeeeee; /* $white */
+  margin-top: auto; /* Push footer content to the bottom of box1 */
 }
 
 .logo {
@@ -99,29 +153,34 @@ body {
 }
 
 .form-control {
-  background-color: #f61067; /* $blueLighter */
+  background-color: #352b5a; /* Slightly lighter blue for input */
   border-radius: 0;
   border-left: 0;
   border-right: 0;
-  color: #eeeeee; /*$white, added to ensure text color*/
+  border-top: 1px solid #9090a5; /* Add a top border for definition */
+  border-bottom: 1px solid #9090a5; /* Add a bottom border for definition */
+  color: #eeeeee; /* $white */
+  margin-bottom: 10px; /* Add some spacing below the input */
 }
 
 .nope {
   background-color: #eeeeee; /* $white */
   margin-left: 10px;
-  width: 100px;
+  width: auto; /* Adjust width to content */
   color: #2ad392; /* $green */
   border-color: #2ad392; /* $green */
 }
 
 .btn-vote {
-  width: 170px;
+  width: auto; /* Adjust width to content */
   height: 40px;
 }
 
 .progress {
   border-radius: 0;
+  flex-grow: 0; /* Prevent progress bar from taking extra vertical space */
 }
+
 .progress-bar-success {
   background-color: #f61067 !important; /* $pink */
 }
@@ -133,14 +192,4 @@ body {
 .alert-info {
   background-color: #9090a5; /* $grey */
   border-radius: 0;
-  border: 0;
-  color: #eeeeee; /* $white */
-  margin-top: 10px;
-}
-
-footer {
-  background-color: #13124f; /* $blueDarker */
-  margin: 0;
-  padding: 5px;
-  color: #eeeeee; /* $white */
-}
+  border:
